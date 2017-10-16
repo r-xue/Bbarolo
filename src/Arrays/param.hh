@@ -101,6 +101,7 @@ public:
     void	setFlagUserGrowthThreshold(bool b){flagUserGrowthT=b;};
     int     getThreads () {return threads;};
     bool    getFlagDebug() {return debug;}
+    bool    getPlot() {return plot;}
     
     void	setGlobProf (bool flag) {globprof = flag;};
     bool 	getGlobProf () {return globprof;};
@@ -324,6 +325,7 @@ private:
 
     int             threads;
     bool            debug;
+    bool            plot;
 };
 
 

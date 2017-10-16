@@ -289,7 +289,8 @@ void Galfit<T>::writeModel (std::string normtype) {
 
     // Now plotting everything
     if (verb) std::cout << "    Writing creative plots..." << std::flush;
-    int ret = plotParam();
+    int ret = 0;
+    if (in->pars().getPlot()) ret = plotParam();
     if (verb) {
         if (ret==0) std::cout << " Done." << std::endl;
         else std::cout << " Something went wrong! Check pyscript.py in the output folder." << std::endl;

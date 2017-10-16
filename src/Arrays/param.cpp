@@ -148,6 +148,7 @@ void Param::defaultValues() {
     
     threads             = 1;
     debug               = false;
+    plot                = true;
 }
 
   
@@ -277,7 +278,8 @@ Param& Param::operator= (const Param& p) {
     
     this->threads           = p.threads;
     this->debug             = p.debug;
-
+    this->plot              = p.plot;
+    
     return *this;
 }
  
@@ -490,6 +492,7 @@ int Param::readParams(std::string paramfile) {
 
             if (arg=="threads")             threads = readIval(ss);
             if (arg=="debug")               debug = readFlag(ss);
+            if (arg=="plot")                plot = readFlag(ss);
 
 		}
     }
