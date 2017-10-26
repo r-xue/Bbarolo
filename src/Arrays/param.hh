@@ -147,6 +147,7 @@ public:
     int		getFTYPE () {return FTYPE;};					
     int		getWFUNC () {return WFUNC;};					
     int		getNV () {return NV;};					
+    int		getCMODE () {return CMODE;};
     double	getTOL () {return TOL;}
     string	getMASK() {return MASK;}
     bool	getSM () {return SM;}
@@ -276,6 +277,7 @@ private:
     int             FTYPE;              ///< Type of function to be minimized;
     int             WFUNC;              ///< Weighting function.
     int             NV;                 ///< Number of subclouds per profile.
+    int             CMODE;              ///< density dependence tunning for CLOUDs number in each ring 
     double          TOL;                ///< Tolerance for minimization.
     string          MASK;///< Type of mask to use: SEARCH, SMOOTH, THRESHOLD, NEGATIVE or NONE.
     bool            SM;

@@ -1078,7 +1078,8 @@ Model::Galmod<T>* Galfit<T>::getModel() {
     if (nv==-1) nv=in->DimZ();
     int ltype = in->pars().getLTYPE();
     int cdens = in->pars().getCDENS();
-    mod->input(in,bhi,blo,outr,nv,ltype,1,cdens);
+    int cmode = in->pars().getCMODE();
+    mod->input(in,bhi,blo,outr,nv,ltype,cmode,cdens);
     mod->calculate();
     mod->smooth();
     return mod;

@@ -689,7 +689,9 @@ void Galmod<T>::galmod() {
 //			Get radius:
 			double rtmp = r->radii[ir];
 //			Get number of clouds inside ring.
-			int nc = lround(pow(cdens*r->dens[ir],cmode)*twopi*rtmp*r->radsep/pixarea); 
+//          r->dens[ir] here is considered as dimensionless (in units 1e20)
+//          nc will determine the running time here... pick wisely
+			int nc = lround(cdens*pow(r->dens[ir],cmode)*twopi*rtmp*r->radsep/pixarea); 
 			if (nc==0) {
                 std::cout << "No clouds used. Choose higher CDENS " << std::endl;
                 std::terminate();

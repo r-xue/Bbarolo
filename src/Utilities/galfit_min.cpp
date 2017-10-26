@@ -514,8 +514,8 @@ T Galfit<T>::model(Rings<T> *dring) {
 	else nv = in->pars().getNV();
 	int ltype = in->pars().getLTYPE();
 	int cdens = in->pars().getCDENS();
-
-	mod->input(in,bhi,blo,dring,nv,ltype,1,cdens);
+    int cmode = in->pars().getCMODE();
+	mod->input(in,bhi,blo,dring,nv,ltype,cmode,cdens);
 	mod->calculate();
 	
 	T *modp = mod->Out()->Array();

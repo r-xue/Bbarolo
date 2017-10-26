@@ -103,6 +103,7 @@ void Param::defaultValues() {
     FTYPE				= 2;
     WFUNC				= 2;
     NV					= -1;
+    CMODE               = 1;
     TOL					= 1.0E-3;
     FREE				= "VROT VDISP INC PA";
     MASK				= "SMOOTH";
@@ -225,6 +226,7 @@ Param& Param::operator= (const Param& p) {
 	this->LTYPE				= p.LTYPE;	
 	this->FTYPE				= p.FTYPE;						
 	this->NV				= p.NV;							
+	this->CMODE             = p.CMODE;
 	this->TOL				= p.TOL;
 	this->TwoStage			= p.TwoStage;
     this->flagErrors		= p.flagErrors;
@@ -444,6 +446,7 @@ int Param::readParams(std::string paramfile) {
             if (arg=="ftype")			FTYPE = readIval(ss);
             if (arg=="wfunc")			WFUNC = readIval(ss);
             if (arg=="nv")				NV = readIval(ss);
+            if (arg=="cmode")			CMODE = readIval(ss);
             if (arg=="tol")				TOL = readDval(ss);
             if (arg=="free")			FREE = readFilename(ss);
             if (arg=="side")			SIDE = readFilename(ss);
