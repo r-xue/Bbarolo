@@ -202,10 +202,11 @@ void Galfit<T>::writeModel (std::string normtype) {
                     T obsSum = 0;
                     for (int z=0; z<in->DimZ(); z++) {
                         long Pix = in->nPix(x,y,z);
-                        modSum += outarray[Pix];
-                        obsSum += in->Array(Pix)*mask[Pix];
+                        modSum += outarray[Pix]*mask[Pix]*outarray[Pix];
+                        obsSum += in->Array(Pix)*mask[Pix]*outarray[Pix];
                     }
                     if (modSum!=0) factor = obsSum/modSum;
+                    if (obsSum<0) factor=0;
                 //}
                 for (int z=0; z<in->DimZ(); z++)
                     outarray[in->nPix(x,y,z)] *= factor;
